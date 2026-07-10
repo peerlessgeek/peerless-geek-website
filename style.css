@@ -5,8 +5,12 @@
   --bg-color: #FFFFFF;
   --text-primary: #0F172A;
   --text-secondary: #475569;
-  --accent: #FF6A00;
-  --accent-glow: rgba(255, 106, 0, 0.15);
+  
+  /* Cinematic Purple Theme */
+  --accent: #892DE1; 
+  --accent-dark: #6D28D2;
+  --accent-glow: rgba(137, 45, 225, 0.15);
+  
   --card-bg: #FAFAFA;
   --border-color: #E2E8F0;
   
@@ -192,7 +196,7 @@ img {
   .btn-primary:hover {
     background-color: var(--accent);
     color: #FFFFFF;
-    box-shadow: 0 6px 20px rgba(255, 106, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(137, 45, 225, 0.3);
     transform: translateY(-2px);
   }
 }
@@ -200,13 +204,29 @@ img {
 .btn-accent {
   background-color: var(--accent);
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(255, 106, 0, 0.25);
+  box-shadow: 0 4px 14px rgba(137, 45, 225, 0.25);
 }
 
 @media (hover: hover) {
   .btn-accent:hover {
-    background-color: #E05E00;
-    box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
+    background-color: var(--accent-dark);
+    box-shadow: 0 6px 20px rgba(109, 40, 210, 0.4);
+    transform: translateY(-2px);
+  }
+}
+
+/* Udemy Specific Button */
+.btn-udemy {
+  background-color: var(--accent-dark);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(109, 40, 210, 0.25);
+}
+
+@media (hover: hover) {
+  .btn-udemy:hover {
+    background-color: var(--accent); 
+    color: #FFFFFF;
+    box-shadow: 0 6px 20px rgba(137, 45, 225, 0.4);
     transform: translateY(-2px);
   }
 }
@@ -254,7 +274,7 @@ img {
   .hover-lift:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-    border-color: rgba(255, 106, 0, 0.4);
+    border-color: rgba(137, 45, 225, 0.4); /* Purple */
   }
 }
 
@@ -479,7 +499,8 @@ img {
   left: 45%;
   width: min(700px, 90vw);
   height: 500px;
-  background: radial-gradient(circle, rgba(255, 106, 0, 0.14) 0%, rgba(14, 165, 233, 0.08) 50%, rgba(255,255,255,0) 80%);
+  /* Cinematic Purple/Blue Glow */
+  background: radial-gradient(circle, rgba(137, 45, 225, 0.14) 0%, rgba(14, 165, 233, 0.08) 50%, rgba(255,255,255,0) 80%);
   filter: blur(80px);
   z-index: 0;
   pointer-events: none;
@@ -578,7 +599,8 @@ img {
 }
 
 .hero-title span {
-  background: linear-gradient(135deg, #FF6A00 0%, #EE0979 100%);
+  /* Cinematic Purple to Indigo Gradient */
+  background: linear-gradient(135deg, #892DE1 0%, #4F46E5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -693,7 +715,7 @@ img {
   position: relative;
   width: 100%;
   max-width: 100%;
-  min-width: 0; /* Keeps grid column 2 stable on desktop */
+  min-width: 0; 
   display: flex;
   justify-content: center;
   perspective: 1000px;
@@ -1000,7 +1022,7 @@ img {
   background-color: #EAEAEA;
   border: 1px solid var(--border-color);
   position: relative;
-  display: block; /* Ensures clean behavior when used as an <a> tag */
+  display: block; 
 }
 
 .course-thumbnail-wrapper img {
@@ -1468,7 +1490,8 @@ img {
   transform: translate(-50%, -50%);
   width: min(500px, 90vw);
   height: 500px;
-  background: radial-gradient(circle, rgba(255, 106, 0, 0.3) 0%, rgba(0,0,0,0) 70%);
+  /* Cinematic Purple */
+  background: radial-gradient(circle, rgba(137, 45, 225, 0.3) 0%, rgba(0,0,0,0) 70%);
   filter: blur(50px);
   pointer-events: none;
 }
@@ -1538,4 +1561,53 @@ img {
 
 @media (max-width: 600px) {
   .footer-content, .footer-bottom { flex-direction: column; text-align: center; justify-content: center; }
+}
+
+/* =========================================
+   14. MOBILE & TOUCH ANIMATION FIXES
+   ========================================= */
+@media (hover: none) {
+  .btn-primary:active {
+    background-color: var(--accent);
+    color: #FFFFFF;
+    box-shadow: 0 6px 20px rgba(137, 45, 225, 0.3);
+  }
+  
+  .btn-accent:active {
+    background-color: var(--accent-dark);
+    box-shadow: 0 6px 20px rgba(109, 40, 210, 0.4);
+  }
+
+  .btn-udemy:active {
+    background-color: var(--accent); 
+    color: #FFFFFF;
+    box-shadow: 0 6px 20px rgba(137, 45, 225, 0.4);
+  }
+
+  .hover-lift:active {
+    transform: scale(0.98);
+    border-color: rgba(137, 45, 225, 0.4);
+    transition: transform 0.15s ease-out, border-color 0.15s ease-out;
+  }
+
+  .course-thumbnail-wrapper:active img {
+    transform: scale(1.04);
+    transition: transform 0.15s ease-out;
+  }
+}
+
+@media (max-width: 991px) {
+  .tech-card {
+    animation: mobile-float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes mobile-float {
+  0%, 100% { 
+    transform: translateY(0) rotateX(0deg) rotateY(0deg); 
+  }
+  50% { 
+    transform: translateY(-12px) rotateX(3deg) rotateY(-2deg); 
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.3);
+  }
 }
