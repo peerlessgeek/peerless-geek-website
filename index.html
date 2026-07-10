@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Peerless Geek — Crack FAANG & Top Tech Interviews Visually</title>
+  <meta name="description" content="Master Java, Data Structures, Algorithms, and coding interviews through animated, visual explanations, hands-on coding, and quizzes to get hired at top tech companies.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-mark">
+        <div class="logo-icon"><i class="fa-solid fa-code"></i></div>
+        <span>Peerless Geek</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#courses" class="nav-link">Courses</a></li>
+        <li><a href="#why-learn" class="nav-link">Why Learn</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#courses" class="btn btn-primary">Explore Courses</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#courses" class="nav-link mobile-link">Courses</a>
+    <a href="#why-learn" class="nav-link mobile-link">Why Learn</a>
+    <a href="#about" class="nav-link mobile-link">About</a>
+    <a href="#testimonials" class="nav-link mobile-link">Testimonials</a>
+    <a href="#faq" class="nav-link mobile-link">FAQ</a>
+    <a href="#courses" class="btn btn-primary mobile-link" style="width: 100%; margin-top: 8px;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-grid">
+      
+      <div class="hero-content fade-up">
+        <div class="badge">Engineered for Technical Interviews</div>
+        <h1 class="hero-title">Master the algorithms to <span>crack top tech.</span></h1>
+        <p class="hero-subtitle">Stop relying on rote memorization. Master Java, Data Structures, and 20+ core coding patterns through animated visual explanations designed to help you clear engineering screens at Tier-1 companies.</p>
+        
+        <div class="hero-buttons">
+          <a href="#courses" class="btn btn-primary">Explore Courses <i class="fa-solid fa-arrow-down" style="margin-left: 4px;"></i></a>
+        </div>
+
+        <div class="company-trust-section">
+          <p class="company-label">Students & engineers learning with us work at:</p>
+          <div class="marquee-container">
+            <div class="marquee-track">
+              <span class="company-logo"><i class="fa-brands fa-google"></i> Google</span>
+              <span class="company-logo"><i class="fa-brands fa-apple"></i> Apple</span>
+              <span class="company-logo"><i class="fa-brands fa-meta"></i> Meta</span>
+              <span class="company-logo"><i class="fa-brands fa-amazon"></i> Amazon</span>
+              <span class="company-logo"><i class="fa-brands fa-microsoft"></i> Microsoft</span>
+              <span class="company-logo"><i class="fa-solid fa-microchip"></i> NVIDIA</span>
+              <span class="company-logo"><i class="fa-solid fa-bolt"></i> OpenAI</span>
+              <span class="company-logo"><i class="fa-brands fa-uber"></i> Uber</span>
+              <span class="company-logo"><i class="fa-solid fa-layer-group"></i> Adobe</span>
+              <span class="company-logo"><i class="fa-solid fa-sparkles"></i> Anthropic</span>
+              
+              <span class="company-logo"><i class="fa-brands fa-google"></i> Google</span>
+              <span class="company-logo"><i class="fa-brands fa-apple"></i> Apple</span>
+              <span class="company-logo"><i class="fa-brands fa-meta"></i> Meta</span>
+              <span class="company-logo"><i class="fa-brands fa-amazon"></i> Amazon</span>
+              <span class="company-logo"><i class="fa-brands fa-microsoft"></i> Microsoft</span>
+              <span class="company-logo"><i class="fa-solid fa-microchip"></i> NVIDIA</span>
+              <span class="company-logo"><i class="fa-solid fa-bolt"></i> OpenAI</span>
+              <span class="company-logo"><i class="fa-brands fa-uber"></i> Uber</span>
+              <span class="company-logo"><i class="fa-solid fa-layer-group"></i> Adobe</span>
+              <span class="company-logo"><i class="fa-solid fa-sparkles"></i> Anthropic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual-wrapper fade-up delay-2">
+        <div class="tech-card" id="parallaxBox">
+          
+          <div class="tech-card-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="status-badge">
+              <i class="fa-solid fa-circle-check"></i> All Test Cases Passed
+            </div>
+          </div>
+
+          <div class="code-preview">
+            <span class="code-comment">// Pattern: Sliding Window (Optimal)</span><br>
+            <span class="code-keyword">public int</span> <span class="code-func">lengthOfLongestSubstring</span>(String s) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span>[] chars = <span class="code-keyword">new int</span>[128];<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> left = 0, maxLen = 0;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> right = 0; right < s.length(); right++) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left = Math.<span class="code-func">max</span>(chars[s.<span class="code-func">charAt</span>(right)], left);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxLen = Math.<span class="code-func">max</span>(maxLen, right - left + 1);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chars[s.<span class="code-func">charAt</span>(right)] = right + 1;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> maxLen;<br>
+            }
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <span class="metric-title">Time Complexity</span>
+              <span class="metric-value"><i class="fa-solid fa-gauge-high"></i> O(N) Optimal</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-title">LeetCode Performance</span>
+              <span class="metric-value" style="color: #34D399;"><i class="fa-solid fa-trophy"></i> Beats 99.4%</span>
+            </div>
+          </div>
+
+          <div class="floating-pill">
+            <div class="floating-pill-icon">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div>
+              <div style="font-size: 0.6875rem; color: #64748B;">Status Update</div>
+              <div>Offer Extended 🎉</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="stats-section" id="stats">
+    <div class="container stats-grid">
+      <div class="stat-item fade-up">
+        <div class="stat-number"><span class="counter" data-target="1600">0</span>+</div>
+        <div class="stat-label">Active Students</div>
+      </div>
+      <div class="stat-item fade-up delay-1">
+        <div class="stat-number"><span class="counter" data-target="180">0</span>+</div>
+        <div class="stat-label">Interview Questions</div>
+      </div>
+      <div class="stat-item fade-up delay-2">
+        <div class="stat-number"><span class="counter" data-target="1200">0</span>+</div>
+        <div class="stat-label">Quiz Questions</div>
+      </div>
+      <div class="stat-item fade-up delay-3">
+        <div class="stat-number"><span class="counter-float" data-target="4.8">0.0</span>★</div>
+        <div class="stat-label">Average Rating</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="courses">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="badge">Next-Gen Visual Education</div>
+        <h2 class="section-title">Master Computer Science with <span>Animated Aura</span></h2>
+        <p class="section-subtitle">Comprehensive, visual-first curricula engineered to transform beginners and intermediate coders into top-tier software engineers.</p>
+      </div>
+
+      <div class="courses-grid">
+        <div class="course-card hover-lift fade-up delay-1">
+          <div>
+            <span class="course-tag">Algorithmic Mastery</span>
+            
+            <a href="#" class="course-thumbnail-wrapper" data-link="blind75" target="_blank" rel="noopener">
+              <img src="images/blind75.webp" alt="Blind 75 Course" id="thumb-blind75">
+            </a>
+
+            <h3 class="course-title">Blind 75 LeetCode: The Animated Aura Series (Crack DSA+)</h3>
+            <p class="course-subtitle">Coding Interview Prep: Solve 85+ LeetCode Problems using 20+ Core Patterns for Data Structures and Algorithms Mastery</p>
+            
+            <div class="course-highlights">
+              <div class="highlight-item"><i class="fa-solid fa-clock"></i> 32+ Hours On-Demand Video</div>
+              <div class="highlight-item"><i class="fa-solid fa-video"></i> 85+ Step-by-Step Solutions (Brute Force to Optimal)</div>
+              <div class="highlight-item"><i class="fa-solid fa-cubes"></i> 20+ Core Algorithmic Patterns</div>
+              <div class="highlight-item"><i class="fa-solid fa-code"></i> Python, Java, C++, JS & More</div>
+              <div class="highlight-item"><i class="fa-solid fa-clipboard-question"></i> 5 Full-Length Mock Tests</div>
+            </div>
+          </div>
+
+          <div class="course-action">
+            <div class="pill-container">
+              <span class="badge-pill pill-discount"><i class="fa-solid fa-tag"></i> Best Price</span>
+              <span class="badge-pill pill-lifetime"><i class="fa-solid fa-infinity"></i> Lifetime Access</span>
+              <span class="badge-pill pill-udemy"><i class="fa-solid fa-shield-halved"></i> Udemy's Trust</span>
+            </div>
+            <a href="#" class="btn btn-primary" data-link="blind75" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
+              Explore on Udemy <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="course-card hover-lift fade-up delay-2">
+          <div>
+            <span class="course-tag" style="color: #0070F3; border-color: rgba(0, 112, 243, 0.2);">Java Bestseller</span>
+            
+            <a href="#" class="course-thumbnail-wrapper" data-link="java" target="_blank" rel="noopener">
+              <img src="images/java.webp" alt="Java Interview Course" id="thumb-java">
+            </a>
+
+            <h3 class="course-title">Java Programming Interview: The Ultimate Animated Guide 2026</h3>
+            <p class="course-subtitle">Master 180+ Most Asked Java Interview Questions with Animated Lessons, 1200+ MCQs, IntelliJ Code Demos & a Free PDF Book</p>
+            
+            <div class="course-highlights">
+              <div class="highlight-item"><i class="fa-solid fa-clock" style="color: #0070F3;"></i> 28+ Hours On-Demand Video</div>
+              <div class="highlight-item"><i class="fa-solid fa-list-check" style="color: #0070F3;"></i> 180+ Top Interview Questions</div>
+              <div class="highlight-item"><i class="fa-solid fa-layer-group" style="color: #0070F3;"></i> Java 21’s Collections Framework & Java Generics</div>
+              <div class="highlight-item"><i class="fa-solid fa-circle-question" style="color: #0070F3;"></i> 1,200+ Interactive MCQs & Quizzes</div>
+              <div class="highlight-item"><i class="fa-solid fa-book-open" style="color: #0070F3;"></i> 630+ Page Downloadable Guide eBook</div>
+            </div>
+          </div>
+
+          <div class="course-action">
+            <div class="pill-container">
+              <span class="badge-pill pill-discount"><i class="fa-solid fa-tag"></i> Best Price</span>
+              <span class="badge-pill pill-lifetime"><i class="fa-solid fa-infinity"></i> Lifetime Access</span>
+              <span class="badge-pill pill-udemy"><i class="fa-solid fa-shield-halved"></i> Udemy's Trust</span>
+            </div>
+            <a href="#" class="btn btn-primary" data-link="java" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
+              Explore on Udemy <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="why-learn" style="background-color: var(--card-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Why Learn With Me</h2>
+        <p class="section-subtitle">Traditional programming tutorials rely on dry text and static code. Peerless Geek rebuilds CS education from the ground up using human visual memory.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="feature-card hover-lift fade-up">
+          <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3 class="feature-title">Animated Learning</h3>
+          <p class="feature-text">Abstract data structures and pointer movements are rendered in clean, beautiful animations so you instantly see how code behaves in memory.</p>
+        </div>
+
+        <div class="feature-card hover-lift fade-up delay-1">
+          <div class="feature-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3 class="feature-title">Real Coding</h3>
+          <p class="feature-text">No hand-waving or pseudocode shortcuts. We write production-ready, clean code together, implementing every algorithm from scratch.</p>
+        </div>
+
+        <div class="feature-card hover-lift fade-up delay-2">
+          <div class="feature-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h3 class="feature-title">Interview Focused</h3>
+          <p class="feature-text">Curricula engineered specifically around the patterns and questions tested by top tech companies, saving you hundreds of hours of random study.</p>
+        </div>
+
+        <div class="feature-card hover-lift fade-up">
+          <div class="feature-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3 class="feature-title">Visual Explanations</h3>
+          <p class="feature-text">Say goodbye to confusing jargon. Complex computer science concepts are translated into intuitive visual analogies that stick for life.</p>
+        </div>
+
+        <div class="feature-card hover-lift fade-up delay-1">
+          <div class="feature-icon"><i class="fa-solid fa-file-pdf"></i></div>
+          <h3 class="feature-title">Revision eBooks</h3>
+          <p class="feature-text">High-density, beautifully designed cheat sheets and a 630+ page summary guide accompany modules for rapid pre-interview refresher sessions.</p>
+        </div>
+
+        <div class="feature-card hover-lift fade-up delay-2">
+          <div class="feature-icon"><i class="fa-solid fa-circle-question"></i></div>
+          <h3 class="feature-title">Practice Quizzes</h3>
+          <p class="feature-text">Reinforce your mental models with over 1,200+ carefully constructed MCQs and quizzes designed to test edge cases and deep understanding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding about-section" id="about">
+    <div class="container about-container">
+      <div class="about-image-wrapper fade-up">
+        <div class="profile-photo-container">
+          <img src="images/instructor.webp" alt="Peerless Geek" id="instructor-photo">
+        </div>
+        <div class="about-decoration"><i class="fa-solid fa-check"></i></div>
+      </div>
+
+      <div class="about-content fade-up delay-1">
+        <span class="about-tag">Meet Your Instructor</span>
+        <h2 class="about-title">Hi, I'm the mind behind Peerless Geek.</h2>
+        <p class="about-bio">Software Developer. Udemy Instructor. Creating premium visual programming education.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 24px;">I realized early in my career that the biggest barrier to mastering computer science isn't the difficulty of the topics—it's how poorly they are explained. I combine rigorous engineering principles with high-end motion design to turn intimidating algorithms into clear, unforgettable visual journeys.</p>
+        
+        <div class="about-stats">
+          <div class="about-stat-item">
+            <span class="about-stat-val">Udemy</span>
+            <span class="about-stat-label">Featured Instructor</span>
+          </div>
+          <div class="about-stat-item">
+            <span class="about-stat-val">100%</span>
+            <span class="about-stat-label">Visual Focus</span>
+          </div>
+          <div class="about-stat-item">
+            <span class="about-stat-val">4.8★</span>
+            <span class="about-stat-label">Student Rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="testimonials">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Loved by Developers</h2>
+        <p class="section-subtitle">See how visual learning has transformed the careers and interview outcomes of students and engineers worldwide.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card hover-lift fade-up">
+          <div>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="quote-text" style="margin-top: 14px;">"Blind 75 is usually a grind, but the step-by-step animations for sliding window and two-pointer techniques made everything click. It felt like watching a high-end documentary. Easily the best investment I've made in my computer science journey."</p>
+          </div>
+          <div class="author-info">
+            <div class="author-avatar">MC</div>
+            <div class="author-details">
+              <h4>Maria Chen</h4>
+              <p>Frontend Developer → Full-Stack Developer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card hover-lift fade-up delay-1">
+          <div>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="quote-text" style="margin-top: 14px;">"Outstanding course with exceptionally clear explanations and valuable insights. Every topic is taught with depth, from the fundamentals to advanced concepts. My Java skills and confidence have improved significantly. Highly recommended."</p>
+          </div>
+          <div class="author-info">
+            <div class="author-avatar">CS</div>
+            <div class="author-details">
+              <h4>Caroline Sabino</h4>
+              <p>Java Developer → Backend Engineer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card hover-lift fade-up delay-2">
+          <div>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="quote-text" style="margin-top: 14px;">"A complete Java interview preparation course for both freshers and experienced developers. The immersive animations make even difficult concepts intuitive and memorable. An absolute masterpiece."</p>
+          </div>
+          <div class="author-info">
+            <div class="author-avatar">ST</div>
+            <div class="author-details">
+              <h4>Shon Telang</h4>
+              <p>Senior Software Engineer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="faq" style="background-color: var(--card-bg); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about the courses, methodology, and platform.</p>
+      </div>
+
+      <div class="faq-container fade-up delay-1">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Who are these courses designed for?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Whether you're a beginner, a computer science student, or a software engineer, these courses are designed to help you build strong programming skills and prepare for technical interviews.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Which course should I start with?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Both courses are designed to get you interview-ready for FAANG (Meta, Amazon, Apple, Netflix, Google) and other top companies like Adobe, Microsoft, Nvidia, OpenAI, and Anthropic. If you want to master Java and ace Java interviews, start with Java Programming Interview: The Ultimate Animated Guide 2026. If you're focused on coding interviews and DSA, start with Blind 75 Leetcode: The Animated Aura Series (Crack DSA+).
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Where are the courses hosted?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              All Peerless Geek courses are hosted on Udemy — one of the world's largest online learning platforms — giving you a secure, reliable learning experience with built-in progress tracking.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Are these courses beginner-friendly?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Concepts are explained step by step, making them easy to follow for beginners while remaining valuable for experienced developers.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How can I get the course at the best possible price?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Just click the "Explore on Udemy" button on the course card — the link automatically applies the best available discount, so you get the lowest eligible price whenever possible.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I access the courses after enrolling?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Once you enroll, the course is instantly added to your Udemy account. Sign in anytime via the Udemy website or app — on desktop, tablet, or mobile — to start learning.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is there a deadline to complete the courses?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              No. All courses are fully self-paced with no deadlines, so you can start, pause, and pick back up whenever your schedule allows.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I get lifetime access after purchasing?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Once enrolled, you'll generally have lifetime access through Udemy, subject to Udemy's terms and policies.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Will I receive a certificate after completion?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Eligible paid Udemy courses include a certificate of completion once you've successfully finished the course.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do the courses include hands-on coding?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Absolutely. Every important concept is explained through practical coding examples, clean implementations, and interview-oriented approaches.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Which programming languages are covered in each course?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Java Programming Interview: The Ultimate Animated Guide 2026 focuses on Java. Blind 75 Leetcode: The Animated Aura Series (Crack DSA+) includes complete solutions and explanations in 8 of the world's most popular programming languages:
+              <div class="language-chips">
+                <span>Java</span>
+                <span>Python</span>
+                <span>C++</span>
+                <span>JavaScript</span>
+                <span>TypeScript</span>
+                <span>C#</span>
+                <span>Go</span>
+                <span>Rust</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Are quizzes and revision notes included?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Every section includes carefully designed quizzes, and most lectures come with concise PDF summaries for quick revision.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I ask questions during the course?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes! You can ask questions anytime through Udemy's Q&A section, and I'll do my best to respond as promptly as possible.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Are the courses updated regularly?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. The courses are continuously refined with new content, improvements, and updates based on student feedback and industry best practices.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Will these courses help me prepare for technical interviews?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. The courses focus on the concepts, problem-solving techniques, and interview patterns commonly assessed in software engineering interviews, helping you build confidence and become interview-ready.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="container cta-content fade-up">
+      <h2 class="cta-title">Become Interview Ready.</h2>
+      <p class="cta-subtitle">Stop memorizing code. Start visualizing solutions and step into your next technical interview with absolute confidence.</p>
+      <a href="#courses" class="btn btn-accent" style="padding: 16px 36px; font-size: 1.125rem;">
+        Explore Courses <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="#" class="brand-mark">
+          <div class="logo-icon"><i class="fa-solid fa-code"></i></div>
+          <span>Peerless Geek</span>
+        </a>
+
+        <div class="footer-socials">
+          <a href="#" class="social-link" data-link="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link" data-link="youtube" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="social-link" data-link="facebook" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-link" data-link="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" data-link="github" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-link" data-link="x" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear">2026</span> Peerless Geek. All rights reserved. Making Computer Science Highly Visual.</p>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: center;">
+          <a href="#courses" style="color: var(--text-secondary);">Courses</a>
+          <a href="#why-learn" style="color: var(--text-secondary);">Why Learn</a>
+          <a href="#about" style="color: var(--text-secondary);">About</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
