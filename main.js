@@ -251,7 +251,46 @@ function initFaq() {
 }
 
 /* =========================================
-   7. INITIALIZATION
+   7. COPY COUPON TO CLIPBOARD
+   ========================================= */
+function initCopyCoupons() {
+  const copyBtns = document.querySelectorAll('.copy-btn');
+  
+  copyBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      // Stop the click from bubbling up and triggering any other mobile tap effects
+      e.preventDefault();
+      e.stopPropagation(); 
+      
+      const code = btn.getAttribute('data-code');
+      const codeTextSpan = btn.querySelector('.code-text');
+      const icon = btn.querySelector('.copy-icon');
+
+      // Write code to clipboard
+      navigator.clipboard.writeText(code).then(() => {
+        const originalText = codeTextSpan.innerText;
+        const originalIcon = icon.className;
+        
+        // Success visual feedback
+        btn.classList.add('copied');
+        codeTextSpan.innerText = 'Copied!';
+        icon.className = 'fa-solid fa-check copy-icon';
+
+        // Revert back after 2 seconds
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          codeTextSpan.innerText = originalText;
+          icon.className = originalIcon;
+        }, 2000);
+      }).catch(err => {
+        console.error('Could not copy text: ', err);
+      });
+    });
+  });
+}
+
+/* =========================================
+   8. INITIALIZATION
    ========================================= */
 document.addEventListener('DOMContentLoaded', () => {
   applyLinks();
@@ -260,6 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initParallax();
   initRipple();
   initFaq();
+  initCopyCoupons();
 
   const yearEl = document.getElementById('currentYear');
   if (yearEl) {

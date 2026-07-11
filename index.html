@@ -108,15 +108,15 @@
           <div class="code-preview">
             <span class="code-comment">// Pattern: Sliding Window (Optimal)</span><br>
             <span class="code-keyword">public int</span> <span class="code-func">lengthOfLongestSubstring</span>(String s) {<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span>[] chars = <span class="code-keyword">new int</span>[128];<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> left = 0, maxLen = 0;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> right = 0; right < s.length(); right++) {<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left = Math.<span class="code-func">max</span>(chars[s.<span class="code-func">charAt</span>(right)], left);<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxLen = Math.<span class="code-func">max</span>(maxLen, right - left + 1);<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chars[s.<span class="code-func">charAt</span>(right)] = right + 1;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> maxLen;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;}
+            &nbsp;&nbsp;<span class="code-keyword">int</span>[] chars = <span class="code-keyword">new int</span>[128];<br>
+            &nbsp;&nbsp;<span class="code-keyword">int</span> left = 0, maxLen = 0;<br>
+            &nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> right = 0; right < s.length(); right++) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;left = Math.<span class="code-func">max</span>(chars[s.<span class="code-func">charAt</span>(right)], left);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;maxLen = Math.<span class="code-func">max</span>(maxLen, right - left + 1);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;chars[s.<span class="code-func">charAt</span>(right)] = right + 1;<br>
+            &nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;<span class="code-keyword">return</span> maxLen;<br>
+            }
           </div>
 
           <div class="metrics-grid">
@@ -202,8 +202,20 @@
               <span class="badge-pill pill-lifetime"><i class="fa-solid fa-infinity"></i> Lifetime Access</span>
               <span class="badge-pill pill-udemy"><i class="fa-solid fa-shield-halved"></i> Udemy's Trust</span>
             </div>
+            
+            <div class="coupon-display">
+              <div class="coupon-info">
+                <div class="coupon-title"><i class="fa-solid fa-gift"></i> Special Offer</div>
+                <div class="coupon-subtitle"><i class="fa-solid fa-circle-check"></i> Auto-applied at checkout</div>
+              </div>
+              <button class="coupon-code copy-btn" data-code="BLIND75JUL2601" aria-label="Copy coupon code">
+                <span class="code-text">BLIND75JUL2601</span>
+                <i class="fa-regular fa-copy copy-icon"></i>
+              </button>
+            </div>
+
             <a href="#" class="btn btn-udemy" data-link="blind75" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
-              Explore on Udemy <i class="fa-solid fa-arrow-right"></i>
+              Claim Discount on Udemy <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -234,8 +246,20 @@
               <span class="badge-pill pill-lifetime"><i class="fa-solid fa-infinity"></i> Lifetime Access</span>
               <span class="badge-pill pill-udemy"><i class="fa-solid fa-shield-halved"></i> Udemy's Trust</span>
             </div>
+            
+            <div class="coupon-display">
+              <div class="coupon-info">
+                <div class="coupon-title"><i class="fa-solid fa-gift"></i> Special Offer</div>
+                <div class="coupon-subtitle"><i class="fa-solid fa-circle-check"></i> Auto-applied at checkout</div>
+              </div>
+              <button class="coupon-code copy-btn" data-code="JAVA202601" aria-label="Copy coupon code">
+                <span class="code-text">JAVA202601</span>
+                <i class="fa-regular fa-copy copy-icon"></i>
+              </button>
+            </div>
+
             <a href="#" class="btn btn-udemy" data-link="java" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
-              Explore on Udemy <i class="fa-solid fa-arrow-right"></i>
+              Claim Discount on Udemy <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -398,18 +422,6 @@
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span>Which course should I start with?</span>
-            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Both courses are designed to get you interview-ready for FAANG (Meta, Amazon, Apple, Netflix, Google) and other top companies like Adobe, Microsoft, Nvidia, OpenAI, and Anthropic. If you want to master Java and ace Java interviews, start with Java Programming Interview: The Ultimate Animated Guide 2026. If you're focused on coding interviews and DSA, start with Blind 75 Leetcode: The Animated Aura Series (Crack DSA+).
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
             <span>Where are the courses hosted?</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </button>
@@ -422,12 +434,24 @@
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span>Are these courses beginner-friendly?</span>
+            <span>Which course should I start with?</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Yes. Concepts are explained step by step, making them easy to follow for beginners while remaining valuable for experienced developers.
+              Both courses are designed to get you interview-ready for FAANG (Meta, Amazon, Apple, Netflix, Google) and other top companies like Adobe, Microsoft, Nvidia, OpenAI, and Anthropic.<br><br>If you want to master Java and ace Java interviews, start with Java Programming Interview: The Ultimate Animated Guide 2026.<br><br>If you're focused on coding interviews and DSA, start with Blind 75 Leetcode: The Animated Aura Series (Crack DSA+).
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I preview the course before purchasing?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Simply click the course thumbnail or the "Claim Discount on Udemy" button to open the course page on Udemy. There, you can watch the course trailer and any available free preview lectures to explore the teaching style and course content before enrolling.
             </div>
           </div>
         </div>
@@ -439,7 +463,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Just click the "Explore on Udemy" button on the course card — the link automatically applies the best available discount, so you get the lowest eligible price whenever possible.
+              Simply click the course thumbnail or the "Claim Discount on Udemy" button on the course card. The link automatically applies the best available discount, helping you get the lowest eligible price whenever possible.<br><br>Alternatively, you can manually copy the discount coupon code and apply it during checkout on Udemy.
             </div>
           </div>
         </div>
@@ -451,7 +475,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Once you enroll, the course is instantly added to your Udemy account. Sign in anytime via the Udemy website or app — on desktop, tablet, or mobile — to start learning.
+              Once you enroll, the course is instantly added to your Udemy account. Simply sign in to Udemy.com or the Udemy mobile app using the same account you used to purchase the course. You can access your courses anytime on your desktop, laptop, tablet, or smartphone and continue learning at your own pace.
             </div>
           </div>
         </div>
@@ -475,7 +499,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Yes. Once enrolled, you'll generally have lifetime access through Udemy, subject to Udemy's terms and policies.
+              Yes. Once you enroll, you'll have lifetime access to the course through Udemy, allowing you to learn at your own pace and revisit the content whenever you need.
             </div>
           </div>
         </div>
@@ -487,7 +511,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Yes. Eligible paid Udemy courses include a certificate of completion once you've successfully finished the course.
+              Yes. Paid Udemy courses include a certificate of completion once you've successfully finished the course.
             </div>
           </div>
         </div>
@@ -511,7 +535,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Java Programming Interview: The Ultimate Animated Guide 2026 focuses on Java. Blind 75 Leetcode: The Animated Aura Series (Crack DSA+) includes complete solutions and explanations in 8 of the world's most popular programming languages:
+              Java Programming Interview: The Ultimate Animated Guide 2026 focuses on Java.<br><br>Blind 75 Leetcode: The Animated Aura Series (Crack DSA+) includes complete solutions and explanations in 8 of the world's most popular programming languages: Java, Python, C++, JavaScript, TypeScript, C#, Go, and Rust.
               <div class="language-chips">
                 <span>Java</span>
                 <span>Python</span>

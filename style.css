@@ -187,9 +187,9 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--text-primary);
+  background-color: #0D111C;
   color: var(--bg-color);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(13, 17, 28, 0.15);
 }
 
 @media (hover: hover) {
@@ -535,9 +535,6 @@ img {
   }
 }
 
-/* CRITICAL DESKTOP & MOBILE FIX: 
-   max-width: 640px preserves desktop design. 
-   min-width: 0 prevents CSS Grid blowout from wide code/marquee elements! */
 .hero-content {
   max-width: 640px;
   min-width: 0;
@@ -600,7 +597,7 @@ img {
 
 .hero-title span {
   /* Cinematic Purple to Indigo Gradient */
-  background: linear-gradient(135deg, #892DE1 0%, #4F46E5 100%);
+  background: linear-gradient(135deg, #892DE1 0%, #EE0979 50%, #FF6A00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -724,7 +721,7 @@ img {
 .tech-card {
   width: 100%;
   max-width: 480px;
-  background: #0F172A;
+  background: #0A0514;
   border: 1px solid #334155;
   border-radius: 20px;
   padding: 24px;
@@ -742,7 +739,7 @@ img {
     padding: 16px;
     border-radius: 16px;
     max-width: 100%;
-    overflow: hidden;
+    /* overflow: hidden removed to allow pill to break border */
   }
 }
 
@@ -751,7 +748,7 @@ img {
   align-items: center;
   justify-content: space-between;
   padding-bottom: 14px;
-  border-bottom: 1px solid #1E293B;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   margin-bottom: 16px;
   gap: 8px;
 }
@@ -799,30 +796,43 @@ img {
   }
 }
 
+/* ==============================================
+   PRO FIX: INVISIBLE SCROLLBAR & NO WRAP
+   ============================================== */
 .code-preview {
   font-family: var(--font-code);
   font-size: 0.8125rem;
   line-height: 1.6;
   color: #E2E8F0;
-  background: #1E293B;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 16px;
   border-radius: 12px;
   margin-bottom: 16px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: #475569 #1E293B;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  
+  /* The Fixes */
+  white-space: nowrap; 
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; 
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Chrome, Safari, Opera */
+.code-preview::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 480px) {
   .code-preview {
-    font-size: 0.725rem;
+    font-size: 0.65rem; /* Scaled down for mobile */
     padding: 12px;
   }
 }
+/* ============================================== */
 
 .code-keyword { color: #F43F5E; font-weight: 600; }
 .code-func { color: #38BDF8; font-weight: 600; }
@@ -836,8 +846,8 @@ img {
 }
 
 .metric-box {
-  background: #1E293B;
-  border: 1px solid #334155;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 12px;
   border-radius: 10px;
   display: flex;
@@ -892,7 +902,7 @@ img {
 @media (max-width: 480px) {
   .floating-pill {
     right: 12px;
-    bottom: 12px;
+    bottom: -20px; /* offset to reveal LeetCode text */
     padding: 8px 12px;
     font-size: 0.75rem;
     border-radius: 12px;
@@ -1156,6 +1166,100 @@ img {
   border-color: #EDE9FE;
 }
 .pill-udemy i { color: #6D28D9; }
+
+/* --------------------------------------
+   Interactive Copyable Coupon Component
+----------------------------------------- */
+.coupon-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(137, 45, 225, 0.05) 0%, rgba(109, 40, 210, 0.08) 100%);
+  border: 1px dashed rgba(137, 45, 225, 0.4);
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+@media (hover: hover) {
+  .coupon-display:hover {
+    border-color: rgba(137, 45, 225, 0.6);
+    box-shadow: 0 4px 12px var(--accent-glow);
+  }
+}
+
+/* Stack the title and the auto-applied checkmark */
+.coupon-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.coupon-title {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Striking Fiery Orange for the Gift Icon */
+.coupon-title i {
+  color: #FF6A00; 
+  font-size: 1.1rem;
+  filter: drop-shadow(0 2px 4px rgba(255, 106, 0, 0.25));
+}
+
+.coupon-subtitle {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #10B981; /* Emerald green */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Highly Compelling Gradient Coupon Button */
+.coupon-code {
+  font-family: var(--font-code);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #FF6A00 0%, #EE0979 100%); /* Sunset Gradient */
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.25); /* Warm Glow */
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+  .coupon-code:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(255, 106, 0, 0.4);
+  }
+}
+
+.coupon-code:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 8px rgba(255, 106, 0, 0.3);
+}
+
+/* Premium Success State when Copied */
+.coupon-code.copied {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%); 
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+  pointer-events: none;
+}
 
 /* =========================================
    8. SECTION 4: WHY LEARN WITH ME
@@ -1534,8 +1638,12 @@ img {
   transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
 }
 
+/* THE FIX: Apply colors and bounce explicitly to the mobile tap state */
 .social-link:active {
   transform: scale(0.92);
+  background: var(--text-primary);
+  color: #FFFFFF;
+  border-color: var(--text-primary);
 }
 
 @media (hover: hover) {
@@ -1584,13 +1692,21 @@ img {
     box-shadow: 0 6px 20px rgba(137, 45, 225, 0.4);
   }
 
+  /* Tactile press effect for cards on touch */
   .hover-lift:active {
     transform: scale(0.98);
     border-color: rgba(137, 45, 225, 0.4);
     transition: transform 0.15s ease-out, border-color 0.15s ease-out;
   }
 
-  .course-thumbnail-wrapper:active img {
+  /* Glow the top bar on tap */
+  .course-card:active::before {
+    background: var(--accent);
+    transition: background-color 0.15s ease-out;
+  }
+
+  /* Thumbnail zooms when ANYWHERE on the course card is tapped */
+  .course-card:active .course-thumbnail-wrapper img {
     transform: scale(1.04);
     transition: transform 0.15s ease-out;
   }
