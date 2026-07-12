@@ -43,15 +43,15 @@
       </a>
 
       <ul class="nav-links">
-        <li><a href="#courses" class="nav-link">Courses</a></li>
-        <li><a href="#why-learn" class="nav-link">Why Learn</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#courses" class="nav-link" id="nav-courses">Courses</a></li>
+        <li><a href="#why-learn" class="nav-link" id="nav-why-learn">Why Learn</a></li>
+        <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+        <li><a href="#testimonials" class="nav-link" id="nav-testimonials">Testimonials</a></li>
+        <li><a href="#faq" class="nav-link" id="nav-faq">FAQ</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a href="#courses" class="btn btn-primary">Explore Courses</a>
+        <a href="#courses" class="btn btn-primary" id="nav-explore-courses">Explore Courses</a>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -60,12 +60,12 @@
   </header>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#courses" class="nav-link mobile-link">Courses</a>
-    <a href="#why-learn" class="nav-link mobile-link">Why Learn</a>
-    <a href="#about" class="nav-link mobile-link">About</a>
-    <a href="#testimonials" class="nav-link mobile-link">Testimonials</a>
-    <a href="#faq" class="nav-link mobile-link">FAQ</a>
-    <a href="#courses" class="btn btn-primary mobile-link" style="width: 100%; margin-top: 8px;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#courses" class="nav-link mobile-link" id="mobile-nav-courses">Courses</a>
+    <a href="#why-learn" class="nav-link mobile-link" id="mobile-nav-why-learn">Why Learn</a>
+    <a href="#about" class="nav-link mobile-link" id="mobile-nav-about">About</a>
+    <a href="#testimonials" class="nav-link mobile-link" id="mobile-nav-testimonials">Testimonials</a>
+    <a href="#faq" class="nav-link mobile-link" id="mobile-nav-faq">FAQ</a>
+    <a href="#courses" class="btn btn-primary mobile-link" id="mobile-nav-explore" style="width: 100%; margin-top: 8px;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 
   <section class="hero">
@@ -78,7 +78,7 @@
         <p class="hero-subtitle">Stop relying on rote memorization. Master Java, Data Structures, and 20+ core coding patterns through animated visual explanations designed to help you clear engineering screens at Tier-1 companies.</p>
         
         <div class="hero-buttons">
-          <a href="#courses" class="btn btn-primary">Explore Courses <i class="fa-solid fa-arrow-down" style="margin-left: 4px;"></i></a>
+          <a href="#courses" class="btn btn-primary" id="hero-explore">Explore Courses <i class="fa-solid fa-arrow-down" style="margin-left: 4px;"></i></a>
         </div>
 
         <div class="company-trust-section">
@@ -200,7 +200,7 @@
           <div>
             <span class="course-tag">Algorithmic Mastery</span>
             
-            <a href="#" class="course-thumbnail-wrapper" data-link="blind75" target="_blank" rel="noopener">
+            <a href="#" class="course-thumbnail-wrapper" data-link="blind75" target="_blank" rel="noopener" id="track-thumb-blind75">
               <img src="images/blind75.webp" alt="Blind 75 Course" id="thumb-blind75">
             </a>
 
@@ -228,13 +228,13 @@
                 <div class="coupon-title"><i class="fa-solid fa-gift"></i> Special Offer</div>
                 <div class="coupon-subtitle"><i class="fa-solid fa-circle-check"></i> Auto-applied at checkout</div>
               </div>
-              <button class="coupon-code copy-btn" data-code="BLIND75JUL2601" aria-label="Copy coupon code">
+              <button class="coupon-code copy-btn" data-code="BLIND75JUL2601" data-course="blind75" aria-label="Copy coupon code">
                 <span class="code-text">BLIND75JUL2601</span>
                 <i class="fa-regular fa-copy copy-icon"></i>
               </button>
             </div>
 
-            <a href="#" class="btn btn-udemy" data-link="blind75" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
+            <a href="#" class="btn btn-udemy" data-link="blind75" target="_blank" rel="noopener" style="width: 100%; justify-content: center;" id="track-btn-blind75">
               Claim Discount on Udemy <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
@@ -244,7 +244,7 @@
           <div>
             <span class="course-tag" style="color: #0070F3; border-color: rgba(0, 112, 243, 0.2);">Java Bestseller</span>
             
-            <a href="#" class="course-thumbnail-wrapper" data-link="java" target="_blank" rel="noopener">
+            <a href="#" class="course-thumbnail-wrapper" data-link="java" target="_blank" rel="noopener" id="track-thumb-java">
               <img src="images/java.webp" alt="Java Interview Course" id="thumb-java">
             </a>
 
@@ -272,13 +272,13 @@
                 <div class="coupon-title"><i class="fa-solid fa-gift"></i> Special Offer</div>
                 <div class="coupon-subtitle"><i class="fa-solid fa-circle-check"></i> Auto-applied at checkout</div>
               </div>
-              <button class="coupon-code copy-btn" data-code="JAVA202601" aria-label="Copy coupon code">
+              <button class="coupon-code copy-btn" data-code="JAVA202601" data-course="java" aria-label="Copy coupon code">
                 <span class="code-text">JAVA202601</span>
                 <i class="fa-regular fa-copy copy-icon"></i>
               </button>
             </div>
 
-            <a href="#" class="btn btn-udemy" data-link="java" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
+            <a href="#" class="btn btn-udemy" data-link="java" target="_blank" rel="noopener" style="width: 100%; justify-content: center;" id="track-btn-java">
               Claim Discount on Udemy <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>

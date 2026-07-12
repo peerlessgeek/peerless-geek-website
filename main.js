@@ -23,6 +23,98 @@ function applyLinks() {
 }
 
 /* =========================================
+   NEW: ANALYTICS HELPER FUNCTION
+   ========================================= */
+function trackEvent(eventName, params = {}) {
+  if (typeof gtag === 'function') {
+    gtag('event', eventName, params);
+  } else {
+    // Console log just for your local debugging if gtag isn't loaded
+    console.log('Tracked Event:', eventName, params);
+  }
+}
+
+function initAnalyticsTracking() {
+  // 1. Desktop Navigation Events
+  const navCourses = document.getElementById('nav-courses');
+  const navWhyLearn = document.getElementById('nav-why-learn');
+  const navAbout = document.getElementById('nav-about');
+  const navTestimonials = document.getElementById('nav-testimonials');
+  const navFaq = document.getElementById('nav-faq');
+  const navExplore = document.getElementById('nav-explore-courses'); // Added explore courses button
+  
+  if(navCourses) navCourses.addEventListener('click', () => trackEvent('navbar_courses_click'));
+  if(navWhyLearn) navWhyLearn.addEventListener('click', () => trackEvent('navbar_why_learn_click'));
+  if(navAbout) navAbout.addEventListener('click', () => trackEvent('navbar_about_click'));
+  if(navTestimonials) navTestimonials.addEventListener('click', () => trackEvent('navbar_testimonials_click'));
+  if(navFaq) navFaq.addEventListener('click', () => trackEvent('navbar_faq_click'));
+  if(navExplore) navExplore.addEventListener('click', () => trackEvent('navbar_explore_courses_click'));
+
+  // 2. Mobile Navigation Events
+  const mobCourses = document.getElementById('mobile-nav-courses');
+  const mobWhyLearn = document.getElementById('mobile-nav-why-learn');
+  const mobAbout = document.getElementById('mobile-nav-about');
+  const mobTestimonials = document.getElementById('mobile-nav-testimonials');
+  const mobFaq = document.getElementById('mobile-nav-faq');
+  const mobExplore = document.getElementById('mobile-nav-explore');
+
+  if(mobCourses) mobCourses.addEventListener('click', () => trackEvent('mobile_nav_courses_click'));
+  if(mobWhyLearn) mobWhyLearn.addEventListener('click', () => trackEvent('mobile_nav_why_learn_click'));
+  if(mobAbout) mobAbout.addEventListener('click', () => trackEvent('mobile_nav_about_click'));
+  if(mobTestimonials) mobTestimonials.addEventListener('click', () => trackEvent('mobile_nav_testimonials_click'));
+  if(mobFaq) mobFaq.addEventListener('click', () => trackEvent('mobile_nav_faq_click'));
+  if(mobExplore) mobExplore.addEventListener('click', () => trackEvent('mobile_nav_explore_courses_click'));
+
+  // 3. Hero Event
+  const heroExplore = document.getElementById('hero-explore');
+  if(heroExplore) heroExplore.addEventListener('click', () => trackEvent('hero_explore_courses_click'));
+
+  // 4. Course Interactions (Blind75)
+  const trackThumbBlind75 = document.getElementById('track-thumb-blind75');
+  const trackBtnBlind75 = document.getElementById('track-btn-blind75');
+  
+  if (trackThumbBlind75) {
+    trackThumbBlind75.addEventListener('click', () => {
+      trackEvent('blind75_thumbnail_click');
+      trackEvent('udemy_click', { course: 'blind75' });
+    });
+  }
+  
+  if (trackBtnBlind75) {
+    trackBtnBlind75.addEventListener('click', () => {
+      trackEvent('blind75_claim_discount_click');
+      trackEvent('udemy_click', { course: 'blind75' });
+    });
+  }
+
+  // 5. Course Interactions (Java)
+  const trackThumbJava = document.getElementById('track-thumb-java');
+  const trackBtnJava = document.getElementById('track-btn-java');
+  
+  if (trackThumbJava) {
+    trackThumbJava.addEventListener('click', () => {
+      trackEvent('java_course_thumbnail_click');
+      trackEvent('udemy_click', { course: 'java' });
+    });
+  }
+  
+  if (trackBtnJava) {
+    trackBtnJava.addEventListener('click', () => {
+      trackEvent('java_claim_discount_click');
+      trackEvent('udemy_click', { course: 'java' });
+    });
+  }
+
+  // 6. Social Links
+  const socialLinks = document.querySelectorAll('.social-link');
+  socialLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      trackEvent('social_click', { platform: link.getAttribute('data-link') });
+    });
+  });
+}
+
+/* =========================================
    2. STICKY NAV & MOBILE MENU
    ========================================= */
 function initNav() {
@@ -43,10 +135,14 @@ function initNav() {
     e.stopPropagation();
     mobileMenu.classList.toggle('active');
     const icon = mobileToggle.querySelector('i');
+    
+    // Track mobile menu state
     if (mobileMenu.classList.contains('active')) {
       icon.classList.replace('fa-bars', 'fa-xmark');
+      trackEvent('mobile_menu_open');
     } else {
       icon.classList.replace('fa-xmark', 'fa-bars');
+      trackEvent('mobile_menu_close');
     }
   });
 
@@ -54,6 +150,7 @@ function initNav() {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('active');
       mobileToggle.querySelector('i').classList.replace('fa-xmark', 'fa-bars');
+      // No need to track close here as the link click is tracked separately
     });
   });
 
@@ -62,6 +159,7 @@ function initNav() {
     if (!mobileMenu.contains(e.target) && !mobileToggle.contains(e.target) && mobileMenu.classList.contains('active')) {
       mobileMenu.classList.remove('active');
       mobileToggle.querySelector('i').classList.replace('fa-xmark', 'fa-bars');
+      trackEvent('mobile_menu_close'); // Track outside click close
     }
   });
 }
@@ -202,7 +300,7 @@ function initRipple() {
 }
 
 /* =========================================
-   6. DYNAMIC FAQ ACCORDION
+   6. DYNAMIC FAQ ACCORDION (Updated for Tracking)
    ========================================= */
 function initFaq() {
   const faqItems = document.querySelectorAll('.faq-item');
@@ -221,6 +319,7 @@ function initFaq() {
     const question = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
     const answerInner = item.querySelector('.faq-answer-inner');
+    const questionText = question.querySelector('span').innerText;
 
     question.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
@@ -235,6 +334,9 @@ function initFaq() {
         item.classList.add('active');
         question.setAttribute('aria-expanded', 'true');
         answer.style.maxHeight = `${answerInner.scrollHeight + 30}px`;
+        
+        // Track the specific FAQ being opened
+        trackEvent('faq_open', { question: questionText });
       }
     });
 
@@ -251,7 +353,7 @@ function initFaq() {
 }
 
 /* =========================================
-   7. COPY COUPON TO CLIPBOARD
+   7. COPY COUPON TO CLIPBOARD (Updated for Tracking)
    ========================================= */
 function initCopyCoupons() {
   const copyBtns = document.querySelectorAll('.copy-btn');
@@ -263,8 +365,12 @@ function initCopyCoupons() {
       e.stopPropagation(); 
       
       const code = btn.getAttribute('data-code');
+      const courseName = btn.getAttribute('data-course');
       const codeTextSpan = btn.querySelector('.code-text');
       const icon = btn.querySelector('.copy-icon');
+
+      // Track the coupon copy event
+      trackEvent('coupon_copy', { course: courseName });
 
       // Write code to clipboard
       navigator.clipboard.writeText(code).then(() => {
@@ -290,18 +396,37 @@ function initCopyCoupons() {
 }
 
 /* =========================================
-   8. SCROLL PROGRESS BAR
+   8. SCROLL PROGRESS BAR & DEPTH TRACKING
    ========================================= */
 function initProgressBar() {
   const progressBar = document.getElementById('scrollProgressBar');
-  if (!progressBar) return;
+  // Set to keep track of milestones so we only fire them once per page load
+  const trackedDepths = new Set();
+  const milestones = [25, 50, 75, 100];
 
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    
+    // Prevent division by zero if scrollHeight is 0
+    if (scrollHeight <= 0) return;
+    
     const scrollPercentage = (scrollTop / scrollHeight) * 100;
     
-    progressBar.style.width = scrollPercentage + '%';
+    // Update visual progress bar if it exists
+    if (progressBar) {
+      progressBar.style.width = scrollPercentage + '%';
+    }
+
+    // Process Scroll Depth Tracking
+    milestones.forEach(milestone => {
+      // Allow a tiny margin of error (e.g. 99.5% for 100%) due to mobile browser calculation differences
+      if (scrollPercentage >= (milestone - 0.5) && !trackedDepths.has(milestone)) {
+        trackedDepths.add(milestone);
+        trackEvent('scroll_depth', { percent: milestone });
+      }
+    });
+
   }, { passive: true });
 }
 
@@ -310,13 +435,14 @@ function initProgressBar() {
    ========================================= */
 document.addEventListener('DOMContentLoaded', () => {
   applyLinks();
+  initAnalyticsTracking(); // Setup all click listeners
   initNav();
   initObservers();
   initParallax();
   initRipple();
   initFaq();
   initCopyCoupons();
-  initProgressBar();
+  initProgressBar(); // Setup progress bar and scroll tracking
 
   const yearEl = document.getElementById('currentYear');
   if (yearEl) {
