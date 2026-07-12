@@ -290,7 +290,23 @@ function initCopyCoupons() {
 }
 
 /* =========================================
-   8. INITIALIZATION
+   8. SCROLL PROGRESS BAR
+   ========================================= */
+function initProgressBar() {
+  const progressBar = document.getElementById('scrollProgressBar');
+  if (!progressBar) return;
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercentage = (scrollTop / scrollHeight) * 100;
+    
+    progressBar.style.width = scrollPercentage + '%';
+  }, { passive: true });
+}
+
+/* =========================================
+   9. INITIALIZATION
    ========================================= */
 document.addEventListener('DOMContentLoaded', () => {
   applyLinks();
@@ -300,6 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRipple();
   initFaq();
   initCopyCoupons();
+  initProgressBar();
 
   const yearEl = document.getElementById('currentYear');
   if (yearEl) {
