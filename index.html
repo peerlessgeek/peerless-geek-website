@@ -123,15 +123,15 @@
       </a>
 
       <ul class="nav-links">
-        <li><a href="#courses" class="nav-link" id="nav-courses">Courses</a></li>
-        <li><a href="#why-learn" class="nav-link" id="nav-why-learn">Why Learn</a></li>
-        <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
-        <li><a href="#testimonials" class="nav-link" id="nav-testimonials">Testimonials</a></li>
-        <li><a href="#faq" class="nav-link" id="nav-faq">FAQ</a></li>
+        <li><a href="#courses" class="nav-link" data-category="navigation" data-action="select_link" data-label="courses" data-location="navbar">Courses</a></li>
+        <li><a href="#why-learn" class="nav-link" data-category="navigation" data-action="select_link" data-label="why-learn" data-location="navbar">Why Learn</a></li>
+        <li><a href="#about" class="nav-link" data-category="navigation" data-action="select_link" data-label="about" data-location="navbar">About</a></li>
+        <li><a href="#testimonials" class="nav-link" data-category="navigation" data-action="select_link" data-label="testimonials" data-location="navbar">Testimonials</a></li>
+        <li><a href="#faq" class="nav-link" data-category="navigation" data-action="select_link" data-label="faq" data-location="navbar">FAQ</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a href="#courses" class="btn btn-primary" id="nav-explore-courses">Explore Courses</a>
+        <a href="#courses" class="btn btn-primary" data-category="navigation" data-action="explore_courses" data-location="navbar">Explore Courses</a>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -140,12 +140,12 @@
   </header>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#courses" class="nav-link mobile-link" id="mobile-nav-courses">Courses</a>
-    <a href="#why-learn" class="nav-link mobile-link" id="mobile-nav-why-learn">Why Learn</a>
-    <a href="#about" class="nav-link mobile-link" id="mobile-nav-about">About</a>
-    <a href="#testimonials" class="nav-link mobile-link" id="mobile-nav-testimonials">Testimonials</a>
-    <a href="#faq" class="nav-link mobile-link" id="mobile-nav-faq">FAQ</a>
-    <a href="#courses" class="btn btn-primary mobile-link" id="mobile-nav-explore" style="width: 100%; margin-top: 8px;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#courses" class="nav-link mobile-link" data-category="mobile_navigation" data-action="select_link" data-label="courses" data-location="mobile_menu">Courses</a>
+    <a href="#why-learn" class="nav-link mobile-link" data-category="mobile_navigation" data-action="select_link" data-label="why-learn" data-location="mobile_menu">Why Learn</a>
+    <a href="#about" class="nav-link mobile-link" data-category="mobile_navigation" data-action="select_link" data-label="about" data-location="mobile_menu">About</a>
+    <a href="#testimonials" class="nav-link mobile-link" data-category="mobile_navigation" data-action="select_link" data-label="testimonials" data-location="mobile_menu">Testimonials</a>
+    <a href="#faq" class="nav-link mobile-link" data-category="mobile_navigation" data-action="select_link" data-label="faq" data-location="mobile_menu">FAQ</a>
+    <a href="#courses" class="btn btn-primary mobile-link" data-category="mobile_navigation" data-action="explore_courses" data-location="mobile_menu" style="width: 100%; margin-top: 8px;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 
   <section class="hero">
@@ -158,7 +158,7 @@
         <p class="hero-subtitle">Stop relying on rote memorization. Master Java, Data Structures, and 20+ core coding patterns through animated visual explanations designed to help you clear engineering screens at Tier-1 companies.</p>
         
         <div class="hero-buttons">
-          <a href="#courses" class="btn btn-primary" id="hero-explore">Explore Courses <i class="fa-solid fa-arrow-down" style="margin-left: 4px;"></i></a>
+          <a href="#courses" class="btn btn-primary" data-category="hero" data-action="explore_courses" data-location="hero">Explore Courses <i class="fa-solid fa-arrow-down" style="margin-left: 4px;"></i></a>
         </div>
 
         <div class="company-trust-section">
@@ -280,8 +280,8 @@
           <div>
             <span class="course-tag">Algorithmic Mastery</span>
             
-            <a href="#" class="course-thumbnail-wrapper" data-link="blind75" target="_blank" rel="noopener" id="track-thumb-blind75">
-              <img src="images/blind75.webp" alt="Blind 75 Course" id="thumb-blind75">
+            <a href="#" class="course-thumbnail-wrapper" data-link="blind75" data-category="course" data-action="select_course" data-course="blind75" data-location="course_card" target="_blank" rel="noopener">
+              <img src="images/blind75.webp" alt="Blind 75 Course">
             </a>
 
             <h3 class="course-title">Blind 75 LeetCode: The Animated Aura Series (Crack DSA+)</h3>
@@ -308,13 +308,13 @@
                 <div class="coupon-title"><i class="fa-solid fa-gift"></i> Special Offer</div>
                 <div class="coupon-subtitle"><i class="fa-solid fa-circle-check"></i> Auto-applied at checkout</div>
               </div>
-              <button class="coupon-code copy-btn" data-code="BLIND75JUL2601" data-course="blind75" aria-label="Copy coupon code">
+              <button class="coupon-code copy-btn" data-code="BLIND75JUL2601" data-category="course" data-action="copy_coupon" data-course="blind75" data-location="course_card" aria-label="Copy coupon code">
                 <span class="code-text">BLIND75JUL2601</span>
                 <i class="fa-regular fa-copy copy-icon"></i>
               </button>
             </div>
 
-            <a href="#" class="btn btn-udemy" data-link="blind75" target="_blank" rel="noopener" style="width: 100%; justify-content: center;" id="track-btn-blind75">
+            <a href="#" class="btn btn-udemy" data-link="blind75" data-category="course" data-action="claim_discount" data-course="blind75" data-location="course_card" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
               Claim Discount on Udemy <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
@@ -324,8 +324,8 @@
           <div>
             <span class="course-tag" style="color: #0070F3; border-color: rgba(0, 112, 243, 0.2);">Java Bestseller</span>
             
-            <a href="#" class="course-thumbnail-wrapper" data-link="java" target="_blank" rel="noopener" id="track-thumb-java">
-              <img src="images/java.webp" alt="Java Interview Course" id="thumb-java">
+            <a href="#" class="course-thumbnail-wrapper" data-link="java" data-category="course" data-action="select_course" data-course="java" data-location="course_card" target="_blank" rel="noopener">
+              <img src="images/java.webp" alt="Java Interview Course">
             </a>
 
             <h3 class="course-title">Java Programming Interview: The Ultimate Animated Guide 2026</h3>
@@ -352,13 +352,13 @@
                 <div class="coupon-title"><i class="fa-solid fa-gift"></i> Special Offer</div>
                 <div class="coupon-subtitle"><i class="fa-solid fa-circle-check"></i> Auto-applied at checkout</div>
               </div>
-              <button class="coupon-code copy-btn" data-code="JAVA202601" data-course="java" aria-label="Copy coupon code">
+              <button class="coupon-code copy-btn" data-code="JAVA202601" data-category="course" data-action="copy_coupon" data-course="java" data-location="course_card" aria-label="Copy coupon code">
                 <span class="code-text">JAVA202601</span>
                 <i class="fa-regular fa-copy copy-icon"></i>
               </button>
             </div>
 
-            <a href="#" class="btn btn-udemy" data-link="java" target="_blank" rel="noopener" style="width: 100%; justify-content: center;" id="track-btn-java">
+            <a href="#" class="btn btn-udemy" data-link="java" data-category="course" data-action="claim_discount" data-course="java" data-location="course_card" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
               Claim Discount on Udemy <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
@@ -706,7 +706,7 @@
     <div class="container cta-content fade-up">
       <h2 class="cta-title">Become Interview Ready.</h2>
       <p class="cta-subtitle">Stop memorizing code. Start visualizing solutions and step into your next technical interview with absolute confidence.</p>
-      <a href="#courses" class="btn btn-accent" style="padding: 16px 36px; font-size: 1.125rem;">
+      <a href="#courses" class="btn btn-accent" data-category="cta" data-action="explore_courses" data-location="cta_section" style="padding: 16px 36px; font-size: 1.125rem;">
         Explore Courses <i class="fa-solid fa-arrow-right"></i>
       </a>
     </div>
@@ -721,12 +721,12 @@
         </a>
 
         <div class="footer-socials">
-          <a href="#" class="social-link" data-link="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="social-link" data-link="youtube" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#" class="social-link" data-link="facebook" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="social-link" data-link="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" class="social-link" data-link="github" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="social-link" data-link="x" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="social-link" data-link="instagram" data-category="social" data-action="visit_social" data-platform="instagram" data-location="footer" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link" data-link="youtube" data-category="social" data-action="visit_social" data-platform="youtube" data-location="footer" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="social-link" data-link="facebook" data-category="social" data-action="visit_social" data-platform="facebook" data-location="footer" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-link" data-link="linkedin" data-category="social" data-action="visit_social" data-platform="linkedin" data-location="footer" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" data-link="github" data-category="social" data-action="visit_social" data-platform="github" data-location="footer" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-link" data-link="x" data-category="social" data-action="visit_social" data-platform="x" data-location="footer" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
       </div>
 
