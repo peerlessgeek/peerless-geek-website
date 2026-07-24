@@ -2,8 +2,8 @@
    1. LINK CONFIGURATION & INJECTION
    ========================================= */
 const LINKS = { 
-  java: "https://www.udemy.com/course/the-ultimate-animated-java-interview-questions-course/?couponCode=JAVA202601", 
-  blind75: "https://www.udemy.com/course/blind-75-leetcode-the-animated-aura-series-crack-dsa/?couponCode=BLIND75JUL2601", 
+  java: "https://www.udemy.com/course/the-ultimate-animated-java-interview-questions-course/?couponCode=JAVAJUL2602", 
+  blind75: "https://www.udemy.com/course/blind-75-leetcode-the-animated-aura-series-crack-dsa/?couponCode=BLIND75JUL2602", 
   instagram: "https://www.instagram.com/peerlessgeek/", 
   youtube: "https://www.youtube.com/@peerlessgeek", 
   facebook: "https://facebook.com",
